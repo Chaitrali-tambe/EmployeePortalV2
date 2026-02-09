@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List< EmployeePortal.Models.Entities.Branches>;
+
+<h1>Branches</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Branch Code</td>
+            <td>Branch Name</td>
+            <td>City Code</td>
+            <td>City</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach(var br in Model)
+        {
+            <tr>
+                <td>@br.BrCode</td>
+                <td>@br.BrName</td>
+                <td>@br.CityCode</td>
+                <td>@br.City</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

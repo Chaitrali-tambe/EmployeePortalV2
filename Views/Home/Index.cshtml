@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="row d-flex justify-content-center">
+        <div class="col-1 col-lg-3 col-md-2 col-sm-1 card mx-lg-3 my-lg-3 my-sm-2 my-2 bg-info bg-gradient bg-opacity-25">
+            <a asp-controller="Employee" asp-action="List" class="card-link normal-text">
+                <div class="card-body">
+                    <h5>Employees</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-1 col-lg-3 col-md-2 col-sm-1 card mx-lg-3 my-lg-3 my-sm-2 my-2 bg-info bg-gradient bg-opacity-25">
+            <a asp-controller="Branches" asp-action="ShowBranches" class="card-link normal-text">
+                <div class="card-body ">
+                    <h5>Branches</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-1 col-lg-3 col-md-2 col-sm-1 card mx-lg-3 my-lg-3 my-sm-2 my-2 bg-info bg-gradient bg-opacity-25">
+            <a href="#" class="card-link normal-text">
+                <div class="card-body ">
+                    <h5>Performance</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-1 col-lg-3 col-md-2 col-sm-1 card mx-lg-3 my-lg-3 my-sm-2 my-2 bg-info bg-gradient bg-opacity-25">
+            <a asp-controller="Employee" asp-action="Add" class="card-link normal-text">
+                <div class="card-body">
+                    <h5>Add Employees</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-1 col-lg-3 col-md-2 col-sm-1 card mx-lg-3 my-lg-3 my-sm-2 my-2 bg-info bg-gradient bg-opacity-25">
+            <a asp-controller="Branches" asp-action="AddBranches" class="card-link normal-text">
+                <div class="card-body ">
+                    <h5>Add Branch</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-1 col-lg-3 col-md-2 col-sm-1 card mx-lg-3 my-lg-3 my-sm-2 my-2 bg-info bg-gradient bg-opacity-25">
+            <a href="#" class="card-link normal-text">
+                <div class="card-body ">
+                    <h5>Ongoing Projects</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-1 col-lg-3 col-md-2 col-sm-1 card mx-lg-3 my-lg-3 my-sm-2 my-2 bg-info bg-gradient bg-opacity-25">
+            <a asp-controller="Dept" asp-action="ViewDept" class="card-link normal-text">
+                <div class="card-body ">
+                    <h5>Add Branch</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

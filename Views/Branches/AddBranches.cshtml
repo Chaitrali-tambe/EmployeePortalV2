@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model EmployeePortal.Models.AddBranchViewModel
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
+<form asp-action="AddBranches" method="post">
+    <h1>Add Employee</h1>
+    <div class="rounded-1 bg-body-secondary">
+        <div class="mt-3">
+            <label class="form-label">Branch Name</label>
+            <input class="form-control w-50" maxlength="100" asp-for="BrName" />
+        </div>
+
+        <div class="mt-2">
+            <label class="form-label">City Code</label>
+            <input type="number" class="form-control w-50" asp-for="CityCode" />
+        </div>
+
+        <div class="mt-2">
+            <label class="form-label">City</label>
+            <input maxlength="100" class="form-control w-50" asp-for="City" />
+        </div>
+
+        <div class="mt-3 d-flex">
+            <button class="btn btn-primary" style="width:80px" type="submit">Submit</button>
+            <button class="btn btn-danger ms-2" onclick="confirmClear()" style="width:80px">Clear</button>
+        </div>
+    </div>
+
+</form>
+
+
+<script>
+    function confirmClear() {
+        if (confirm("Are you sure you want to clear everything?")) {
+            // Find the form and reset it
+            document.querySelector("form").reset();
+        }
+    }
+</script>
