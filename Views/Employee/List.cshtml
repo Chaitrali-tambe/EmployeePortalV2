@@ -4,9 +4,13 @@
 @{
 }
 
-@model List<EmployeePortal.Models.Entities.Employee>;
+@model List<EmployeePortal.Models.EmployeeViewModel>;
 
-<h1>Employee List</h1>
+
+<div class="d-flex align-items-center justify-content-between">
+    <h1 class="mb-3">Employee List</h1>
+    <a asp-controller="Employee" asp-action="Add" class="btn darkTeal-bg w-fit-content">Add Employee</a>
+</div>
 
 <table class="table table-bordered">
     <thead>
@@ -29,6 +33,15 @@
             <th>
                 DOB
             </th>
+            <th>
+                DESIGNATION
+            </th>
+            <th>
+                BRANCH
+            </th>
+            <th>
+                BRANCH
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -40,6 +53,9 @@
                 <td>@employee.City</td>
                 <td>@employee.salary</td>
                 <td>@employee.DOB</td>
+                <td>@employee.desnName</td>
+                <td>@employee.Branch</td>
+                <td>@employee.Dept</td>
                 <td><a asp-controller="Employee" asp-action="Edit" asp-route-id="@employee.Id">Edit</a></td>
             </tr>
         }

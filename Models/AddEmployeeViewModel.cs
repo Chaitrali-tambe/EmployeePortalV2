@@ -7,6 +7,8 @@
         public string? City { get; set; }
         public decimal salary { get; set; }
         public DateTime DOB { get; set; }
-
+        public string? desnName { get; set; }
+        public int Branch { get; set; }
+        public int DeptId { get; set; }
     }
 }

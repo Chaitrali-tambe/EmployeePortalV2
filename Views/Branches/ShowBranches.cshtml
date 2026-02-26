@@ -6,7 +6,11 @@
 
 @model List< EmployeePortal.Models.Entities.Branches>;
 
-<h1>Branches</h1>
+<div class="d-flex align-items-center justify-content-between">
+    <h1 class="mb-3">Branches</h1>
+    <a asp-controller="Branches" asp-action="AddBranches" class="btn darkTeal-bg w-fit-content">Add Branches</a>
+</div>
+
 
 <table class="table table-bordered">
     <thead>

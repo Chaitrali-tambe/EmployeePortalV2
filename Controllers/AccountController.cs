@@ -72,8 +72,14 @@ namespace EmployeePortal.Controllers
 
         //For Login 
         [HttpGet]
-        public IActionResult Login()
+        public async Task<IActionResult> Login()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+                return RedirectToAction("Login");
+            }
             return View();
         }
 
@@ -101,6 +107,13 @@ namespace EmployeePortal.Controllers
 
             var identity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);
+
+            var authProperties = new AuthenticationProperties
+            {
+                IsPersistent = false, // The cookie dies when the browser closes
+                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(5)
+            };
+
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
             return RedirectToAction("Index", "Home");
         }
@@ -109,8 +122,8 @@ namespace EmployeePortal.Controllers
         {
             await HttpContext.SignOutAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme);
-
-            return RedirectToAction("Login");
+            //HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Account");
         }
     }
 }

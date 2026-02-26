@@ -18,5 +18,10 @@ namespace EmployeePortal.Models.Entities
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
+        public string? desnName { get; set; }
+
+        public int Branch { get; set; }
+
+        public int DeptId { get; set; }
     }
 }

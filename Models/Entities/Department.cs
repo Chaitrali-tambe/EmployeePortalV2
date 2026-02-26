@@ -14,7 +14,7 @@ namespace EmployeePortal.Models.Entities
         public string? DeptName { get; set; }
 
         [StringLength(200)]
-        public int DeptHead { get; set; }
+        public string? DeptHead { get; set; }
 
     }
 }

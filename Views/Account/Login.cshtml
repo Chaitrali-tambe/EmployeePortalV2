@@ -7,6 +7,25 @@
 
 @model EmployeePortal.Models.LoginViewModel
 
+
+<style>
+    body{
+        height:100vh;
+    }
+
+    body>div{
+            height: inherit;
+            display: flex;
+            flex-direction: column;
+            /* flex: 2; */
+            justify-content: center;
+    }
+
+    .card:hover{
+        transform : none;
+    }
+</style>
+
 @if (!ViewData.ModelState.IsValid)
 {
     <div class="alert alert-danger">
@@ -18,7 +37,7 @@
 }
 
 <form asp-action="Login" method="post">
-    <div class="bg-secondary bg-gradient bg-opacity-25 d-flex flex-column align-self-center p-3 rounded-4" style="width: 60%;justify-self:center">
+    <div class="card bg-secondary bg-gradient bg-opacity-25 d-flex flex-column align-self-center p-3 rounded-4" style="width: 60%;justify-self:center">
         <h1 class="text-center">Login</h1>
         <div class="rounded-1 bg-body-secondary d-flex flex-column align-items-center">
             <div class="mt-3">

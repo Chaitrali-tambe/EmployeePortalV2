@@ -6,8 +6,10 @@
 
 @model IEnumerable<EmployeePortal.Models.Entities.Department>;
 
-<div class="d-flex justify-content-end">
-    <a asp-controller="Dept" asp-action="AddDept" class="btn btn-primary">Add Department</a>
+
+<div class="d-flex align-items-center justify-content-between">
+    <h1 class="mb-3">Designations</h1>
+    <a asp-controller="Dept" asp-action="AddDept" class="btn darkTeal-bg w-fit-content">Add Department</a>
 </div>
 
 <div>
@@ -17,11 +19,11 @@
         <div class="d-flex flex-column justify-content-center">
             @foreach (var dept in Model)
             {
-                <div class="col  mx-lg-3 my-lg-3 my-sm-2 my-2 bg-success bg-gradient bg-opacity-25">
+                <div class="card col darkTeal-border pe-none  mx-lg-3 my-lg-3 my-sm-2 my-2 bg-success bg-gradient bg-opacity-25 darkTeal">
                     <a class="card-link normal-text">
                         <div class="card-body">
                             <h5>@dept.DeptName</h5>
-                            <p>Head of Department @dept.DeptHead</p>
+                            <p>Head of Department: @dept.DeptHead</p>
                         </div>
                     </a>
                 </div>
