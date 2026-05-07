@@ -1,4 +1,4 @@
-﻿@*
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -58,3 +58,11 @@
         </div>
     </div>
 </form>
+
+<script type="text/javascript">
+    window.onload = function () {
+        // This prevents the user from navigating back to the login page after logging out
+        window.history.forward();
+    };
+    window.onunload = function () { null };
+</script>
