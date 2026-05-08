@@ -19,3 +19,4 @@ This project provides a user-friendly interface for managing employee data, incl
 **Model:** Defines the Employee entity structure and database mapping (via EF Core).
 **View:** Razor templates for displaying data tables, edit forms, and create interfaces.
 **Controller:** Handles incoming requests, interacts with the model, and renders views.
+
