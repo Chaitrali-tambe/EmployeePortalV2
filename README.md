@@ -1,4 +1,4 @@
-##Employee Portal - MVC Project
+## Employee Portal - MVC Project
 A comprehensive Employee Data system designed to demonstrate the fundamentals of the ASP.NET Core MVC architectural pattern. 
 This project provides a user-friendly interface for managing employee data, including professional details, departmental information, and CRUD operations.
 
