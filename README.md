@@ -18,5 +18,6 @@ This project provides a user-friendly interface for managing employee data, incl
 ### 🏗️ Architecture Components
 **Model:** Defines the Employee entity structure and database mapping (via EF Core).
 **View:** Razor templates for displaying data tables, edit forms, and create interfaces.
-**Controller:** Handles incoming requests, interacts with the model, and renders views.
+**Controller:** Handles incoming requests, interacts with the model, and renders views. 
 
+### 💿 Dual-Database Strategy:Primary Database (AppDbContext): Manages core business logic, including employee profiles, department hierarchies, and organizational structures.Secondary Database (LoggingDbContext or AuthDbContext): Dedicated to auxiliary functions such as system auditing, error logging, or membership management, ensuring that high-volume logs do not impact the performance of the main transactional database.
