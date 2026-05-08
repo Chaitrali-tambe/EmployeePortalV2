@@ -1,4 +1,4 @@
-﻿using EmployeePortal.Data;
+using EmployeePortal.Data;
 using EmployeePortal.Models;
 using EmployeePortal.Models.Entities;
 using Microsoft.AspNetCore.Authentication;
@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using NuGet.Protocol;
 using System.Security.Claims;
 
 namespace EmployeePortal.Controllers
@@ -115,14 +116,22 @@ namespace EmployeePortal.Controllers
             };
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+            HttpContext.Session.SetString("username",user.UserName.ToString());
+            HttpContext.Session.SetString("Name", user.Name.ToString());
+            
             return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Logout()
         {
+            HttpContext.Session.Clear();
+
             await HttpContext.SignOutAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme);
-            //HttpContext.Session.Clear();
+            Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+            Response.Headers["Pragma"] = "no-cache";
+            Response.Headers["Expires"] = "-1";
             return RedirectToAction("Login", "Account");
         }
     }
